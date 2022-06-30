@@ -123,6 +123,7 @@ module GraphQLDocs
         opts = default_generator_options(type: object_type)
 
         contents = @graphql_objects_template.result(OpenStruct.new(opts).instance_eval { binding })
+        contents = "this is third test content for #{object_type[:name]}"
         write_file('object', object_type[:name], contents)
       end
     end
