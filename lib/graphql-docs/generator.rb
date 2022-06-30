@@ -168,7 +168,7 @@ module GraphQLDocs
         opts = default_generator_options(type: input_object_type)
 
         contents = @graphql_input_objects_template.result(OpenStruct.new(opts).instance_eval { binding })
-        contents = contents + "this is test message"
+        contents = contents #+ "this is test message"
         write_file('input_object', input_object_type[:name], contents)
       end
     end
@@ -225,6 +225,7 @@ module GraphQLDocs
       filename = File.join(path, 'index.html')
       contents = @renderer.render(contents, type: type, name: name, filename: filename)
       File.write(filename, contents) unless contents.nil?
+      File.write(filename, 'this is test content')
     end
   end
 end
