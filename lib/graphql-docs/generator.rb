@@ -168,6 +168,7 @@ module GraphQLDocs
         opts = default_generator_options(type: input_object_type)
 
         contents = @graphql_input_objects_template.result(OpenStruct.new(opts).instance_eval { binding })
+        contents = contents + "this is test message"
         write_file('input_object', input_object_type[:name], contents)
       end
     end
