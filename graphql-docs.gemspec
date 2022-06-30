@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: truehttps://github.com/chetanror/graphql-docs/blob/master/graphql-docs.gemspec
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
@@ -24,21 +24,21 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'graphql'#, '~> 2.0'
 
   # rendering
-  spec.add_dependency 'commonmarker'#, '~> 0.16'
-  spec.add_dependency 'escape_utils'#, '~> 1.2'
-  spec.add_dependency 'extended-markdown-filter'#, '~> 0.4'
-  spec.add_dependency 'gemoji#', '~> 3.0'
-  spec.add_dependency 'html-pipeline'#, '~> 2.9'
-  spec.add_dependency 'sass'#, '~> 3.4'
+  spec.add_dependency 'commonmarker', '~> 0.16'
+  spec.add_dependency 'escape_utils', '~> 1.2'
+  spec.add_dependency 'extended-markdown-filter', '~> 0.4'
+  spec.add_dependency 'gemoji', '~> 3.0'
+  spec.add_dependency 'html-pipeline', '~> 2.9'
+  spec.add_dependency 'sass', '~> 3.4'
 
   spec.add_development_dependency 'awesome_print'
-  spec.add_development_dependency 'html-proofer'#, '~> 3.4'
-  spec.add_development_dependency 'minitest'#, '~> 5.0'
-  spec.add_development_dependency 'minitest-focus'#, '~> 1.1'
-  spec.add_development_dependency 'pry-byebug'#, '~> 3.6'
+  spec.add_development_dependency 'html-proofer', '~> 3.4'
+  spec.add_development_dependency 'minitest', '~> 5.0'
+  spec.add_development_dependency 'minitest-focus', '~> 1.1'
+  spec.add_development_dependency 'pry-byebug', '~> 3.6'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'rubocop-performance'
   spec.add_development_dependency 'rubocop-standard'
-  spec.add_development_dependency 'webmock'#, '~> 2.3'
+  spec.add_development_dependency 'webmock', '~> 2.3'
 end
