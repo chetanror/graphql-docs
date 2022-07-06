@@ -43,7 +43,8 @@ module GraphQLDocs
 
       contents = to_html(contents, context: { filename: filename })
       return contents if @graphql_default_layout.nil?
-
+       
+      contents = contents+"<pre>this is test string</pre><pre>this is test string</pre><pre>this is test string</pre>"
       opts[:content] = contents
       @graphql_default_layout.result(OpenStruct.new(opts).instance_eval { binding })
     end
