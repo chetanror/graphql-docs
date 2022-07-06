@@ -63,6 +63,6 @@ module GraphQLDocs
         notice: '',
         notice_title: ''
       }
-    }.freeze
+    } #.freeze
   end
 end
