@@ -62,7 +62,7 @@ module GraphQLDocs
 
       write_file('static', 'index', @graphql_index_landing_page, trim: false) unless @graphql_index_landing_page.nil?
 
-      write_file('static', 'examples', @graphql_index_landing_page, trim: false) unless @graphql_index_landing_page.nil?
+      write_file('static', 'examples', @graphql_examples_landing_page, trim: false) unless @graphql_examples_landing_page.nil?
 
       write_file('static', 'object', @graphql_object_landing_page, trim: false) unless @graphql_object_landing_page.nil?
 
