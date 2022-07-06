@@ -21,7 +21,7 @@ module GraphQLDocs
         instance_variable_set("@graphql_#{sym}_template", ERB.new(File.read(@options[:templates][sym])))
       end
 
-      %i[index examples object query mutation interface enum union input_object scalar directive].each do |sym|
+      %i[index example object query mutation interface enum union input_object scalar directive].each do |sym|
         if @options[:landing_pages][sym].nil?
           instance_variable_set("@#{sym}_landing_page", nil)
         elsif !File.exist?(@options[:landing_pages][sym])
@@ -62,7 +62,7 @@ module GraphQLDocs
 
       write_file('static', 'index', @graphql_index_landing_page, trim: false) unless @graphql_index_landing_page.nil?
 
-      write_file('static', 'examples', @graphql_examples_landing_page, trim: false) unless @graphql_examples_landing_page.nil?
+      write_file('static', 'example', @graphql_example_landing_page, trim: false) unless @graphql_example_landing_page.nil?
 
       write_file('static', 'object', @graphql_object_landing_page, trim: false) unless @graphql_object_landing_page.nil?
 
@@ -200,7 +200,7 @@ module GraphQLDocs
 
     def write_file(type, name, contents, trim: true)
       if type == 'static'
-        if name == 'index'
+        if name == 'index' || name == 'example'
           path = @options[:output_dir]
         else
           path = File.join(@options[:output_dir], name)
@@ -224,6 +224,9 @@ module GraphQLDocs
       end
 
       filename = File.join(path, 'index.html')
+      contents = @renderer.render(contents, type: type, name: name, filename: filename)
+      File.write(filename, contents) unless contents.nil?
+      filename = File.join(path, 'example.html')
       contents = @renderer.render(contents, type: type, name: name, filename: filename)
       File.write(filename, contents) unless contents.nil?
     end
