@@ -43,7 +43,7 @@ module GraphQLDocs
 
       landing_pages: {
         index: "#{File.dirname(__FILE__)}/landing_pages/index.md",
-        examples: "#{File.dirname(__FILE__)}/landing_pages/index.md",
+        examples: "#{File.dirname(__FILE__)}/landing_pages/examples.md",
         query: "#{File.dirname(__FILE__)}/landing_pages/query.md",
         object: "#{File.dirname(__FILE__)}/landing_pages/object.md",
         mutation: "#{File.dirname(__FILE__)}/landing_pages/mutation.md",
